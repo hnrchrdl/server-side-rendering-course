@@ -1,5 +1,5 @@
 Arguments: 
-  /home/hr/.nvm/versions/node/v8.11.3/bin/node /usr/share/yarn/bin/yarn.js dev
+  /home/hr/.nvm/versions/node/v8.11.3/bin/node /usr/share/yarn/bin/yarn.js dev:build:server
 
 PATH: 
   /home/hr/Dev/tools/gcloud/google-cloud-sdk/bin:/home/hr/.nvm/versions/node/v8.11.3/bin:/home/hr/local/bin:mongodb/bin:/home/hr/go/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/tools:/platform-tools
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/hr/Dev/playground/ssr/server/package.json: Unexpected token } in JSON at position 364
+  SyntaxError: /home/hr/Dev/playground/ssr/server/package.json: Unexpected token } in JSON at position 318
       at JSON.parse (<anonymous>)
       at /usr/share/yarn/lib/cli.js:1631:59
       at Generator.next (<anonymous>)
@@ -31,7 +31,6 @@ npm manifest:
         "scripts": {
           "dev:server": "nodemon --watch build --exec \"node build/bundle.js \"",
           "dev:build:server": "webpack --config webpack.server.js --watch",
-          "dev: dev:build:server && dev:server"
         },
         "author": "",
         "license": "ISC",
