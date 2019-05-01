@@ -4,6 +4,7 @@
       "description": "Server side rendering project",
       "main": "index.js",
       "scripts": {
+        "dev:build:server": "webpack --config webpack.server.js"
       },
       "author": "",
       "license": "ISC",
