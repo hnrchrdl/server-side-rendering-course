@@ -7,8 +7,20 @@ const app = express();
 
 app.get('/', (req, res) => {
     const content = renderToString(<Home />);
-    res.send(content)
+    const html = `
+<html>
+    <head>
+    </head>
+    <body>
+        <div>${content}</div>
+        <script src="bundle.js"></script>
+    </body>
+</html>
+`
+    res.send(html)
 })
+
+app.use(express.static('public'))
 
 app.listen(3000, () => {
     console.log('listening on 3000')
