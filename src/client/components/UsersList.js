@@ -8,29 +8,34 @@ class UsersList extends React.Component {
   }
 
   renderUsers() {
-      return this.props.users.map(user => {
-          return <li key={user.id} >{user.name}</li>
-      })
+    return this.props.users.map(user => {
+      return <li key={user.id}>{user.name}</li>;
+    });
   }
 
   render() {
-      return (
-          <div>
-              Here is a big list of users
-              <ul>{this.renderUsers()}</ul>
-          </div>
-      )
+    return (
+      <div>
+        Here is a big list of users
+        <ul>{this.renderUsers()}</ul>
+      </div>
+    );
   }
 }
 
 const mapStateToProps = state => ({
-    users: state.users
+  users: state.users
 });
 
 const mapDispatchToProps = {
   fetchUsers
 };
 
+function loadData() {
+  console.log("trying to load");
+}
+
+export { loadData };
 export default connect(
   mapStateToProps,
   mapDispatchToProps
