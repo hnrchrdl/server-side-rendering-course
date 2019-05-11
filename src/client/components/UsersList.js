@@ -31,8 +31,8 @@ const mapDispatchToProps = {
   fetchUsers
 };
 
-function loadData() {
-  console.log("trying to load");
+function loadData(store) {
+  return store.dispatch(fetchUsers())
 }
 
 export { loadData };

@@ -8,8 +8,8 @@ export default [
     exact: true
   },
   {
-      loadData,
+    loadData,
     path: "/users",
-    component: UsersList,
+    component: UsersList
   }
 ];

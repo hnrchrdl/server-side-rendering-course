@@ -12,9 +12,11 @@ app.use(express.static("public"));
 app.get("*", (req, res) => {
   const store = createStore();
   const path = req.path;
-  matchRoutes(Routes, path).map(({ route }) => {
-    return route.loadData ? route.loadData() : null;
+  const promises = matchRoutes(Routes, path).map(({ route }) => {
+    return route.loadData ? route.loadData(store) : null;
   });
+
+  console.log(promises)
 
   return res.send(renderer(req, store));
 });
