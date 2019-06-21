@@ -15,4 +15,6 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default {
+  component: Home
+};
